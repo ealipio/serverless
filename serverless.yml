@@ -39,25 +39,25 @@ functions:
     handler: articles/create.handler
     events:
       - http:
-          path: createArticle
+          path: articles
           method: post
   readArticle:
     handler: articles/read.handler
     events:
       - http:
-          path: readArticle
+          path: articles
           method: get
   updateArticle:
     handler: articles/update.handler
     events:
       - http:
-          path: updateArticle
+          path: articles
           method: put
   deleteArticle:
     handler: articles/delete.handler
     events:
       - http:
-          path: deleteArticle
+          path: articles
           method: delete
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
