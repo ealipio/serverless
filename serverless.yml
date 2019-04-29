@@ -87,9 +87,21 @@ functions:
 #      variable2: value2
 
 # you can add CloudFormation resource templates here
-#resources:
-#  Resources:
-#    NewResource:
+resources:
+  Resources:
+    Blogtable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: BlogTable
+        AttributeDefinitions:
+          - AttributeName: article_id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: article_id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
 #      Type: AWS::S3::Bucket
 #      Properties:
 #        BucketName: my-new-bucket
